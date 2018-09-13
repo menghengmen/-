@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.title = @"太原活动预览";
 }
 
 - (void)didReceiveMemoryWarning {
