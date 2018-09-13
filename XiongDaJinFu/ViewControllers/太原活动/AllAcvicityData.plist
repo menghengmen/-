@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+   AllAcvicityData.plist
+   XiongDaJinFu
+
+   Created by 哈哈 on 2018/9/12.
+   Copyright (c) 2018年 digirun. All rights reserved.
+-->
+<plist version="1.0">
+    <array>
+        <dict>
+            <key>actiLogoUrl</key>
+            <string>12</string>
+            <key>actiName</key>
+            <string>爱“阅”绘本故事《猜猜我有多爱你》</string>
+            <key>actiNum</key>
+            <string>13</string>
+            <key>uasuId</key>
+            <string>5</string>
+            <key>detail</key>
+            <string>兔宝宝和爸爸一起比赛，看谁更爱谁，大兔子前一局获胜，小兔子用丰富的想象力赢得了比大兔子更多的爱。
+                
+                活动时间：10月1日15:00—16:00
+                
+                活动地点：太原市图书馆一层亲子阅读馆故事区</string>
+        </dict>
+        
+    
+        <dict>
+            <key>actiLogoUrl</key>
+            <string>13</string>
+            <key>actiName</key>
+            <string>和孩子的心灵一起成长</string>
+            <key>actiNum</key>
+            <string>200</string>
+            <key>uasuId</key>
+            <string>500</string>
+            <key>detail</key>
+            <string>
+                不只是孩子，父母也同样需要成长，而大多数父母只关注孩子的成长，而忽略了自己的成长。
+                
+                主讲人：李军兰（太原师范学院心理学教授）
+                
+                活动时间：9月15日9:30—11:30
+                
+                活动地点：太原市图书馆负一层报告厅</string>
+        </dict>
+        
+        <dict>
+            <key>actiLogoUrl</key>
+            <string>14</string>
+            <key>actiName</key>
+            <string>太宝故事会——文爸爸讲故事</string>
+            <key>actiNum</key>
+            <string>200</string>
+            <key>uasuId</key>
+            <string>500</string>
+            <key>detail</key>
+            <string>
+                让我们在文爸爸的带领下，一起开启奇妙的绘本之旅。
+                
+                活动时间：6月2日10:00—11:00
+                
+                活动地点：太原市图书馆一层亲子阅读馆故事区</string>
+        </dict>
+        
+    </array>
+    
+    
+</plist>

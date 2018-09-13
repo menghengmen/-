@@ -1,14 +1,20 @@
 //
 //  AppDelegate.m
-//  XiongDaJinFu
+//  MaDongFrame
 //
-//  Created by 码动 on 16/10/13.
+//  Created by 码动 on 16/10/8.
 //  Copyright © 2016年 digirun. All rights reserved.
 //
 
 #import "AppDelegate.h"
+#import "GuideViewController.h"
+#import "MainTabBarController.h"
+#import "AvoidCrash.h"
+#import "IQKeyboardManager.h"
 
+#import "LoginViewController.h"
 @interface AppDelegate ()
+<UITabBarControllerDelegate>
 
 @end
 
@@ -17,29 +23,45 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    //[self initMainController];
+    //[XDCommonTool goToMain];
+    
+    
+    //这句代码会让AvoidCrash生效，若没有如下代码，则AvoidCrash就不起作用
+    
+    [AvoidCrash becomeEffective];
+   //self.window.rootViewController = [[LoginViewController alloc] init];
+    self.window.rootViewController = [[LoginViewController alloc] init];
+    //键盘设置（无需设置，直接编译即可）
+    IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
+    manager.enable = YES;
+    manager.shouldResignOnTouchOutside = YES;
+    manager.shouldToolbarUsesTextFieldTintColor = YES;
+    manager.enableAutoToolbar = false;
+    manager.preventShowingBottomBlankSpace = true;
+    
+ 
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
-- (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-}
 
-- (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-}
 
-- (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-}
 
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-}
-
-- (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+#pragma mark- 根据设备获取 自定义fontSize
+- (CGFloat)fontSize{
+    if (CGSizeEqualToSize(self.window.frame.size, CGSizeMake(320, 480))) {
+        _fontSize = 15.0;
+    }else if (CGSizeEqualToSize(self.window.frame.size, CGSizeMake(320, 568))){
+        _fontSize = 16.0;
+    }else if (CGSizeEqualToSize(self.window.frame.size, CGSizeMake(375, 667))){
+        _fontSize = 17.0;
+    }else if (CGSizeEqualToSize(self.window.frame.size, CGSizeMake(414, 736))){
+        _fontSize = 20.0;
+    }
+    
+    return _fontSize;
 }
 
 @end
