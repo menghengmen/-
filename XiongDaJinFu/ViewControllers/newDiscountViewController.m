@@ -41,9 +41,10 @@
     tableView.contentInset = UIEdgeInsetsMake(0, 0, 100, 0);
     self.musicListTableView = tableView;
     
-    UIImageView  * view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, 100)];
+    UIImageView  * view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, 200)];
     view.contentMode = UIViewContentModeScaleAspectFill;
     view.image = [UIImage imageNamed:@"play_banner"];
+    view.clipsToBounds = YES;
     tableView.tableHeaderView = view;
     [self.view addSubview:tableView];
     [self getLocalData];
