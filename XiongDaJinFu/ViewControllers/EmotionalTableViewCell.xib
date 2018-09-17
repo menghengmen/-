@@ -39,8 +39,8 @@
                             <constraint firstAttribute="width" constant="18" id="xV3-1O-dgr"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="----" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q48-7R-bzc">
-                        <rect key="frame" x="133" y="59" width="177" height="12"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="----" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q48-7R-bzc">
+                        <rect key="frame" x="133" y="59" width="177" height="57"/>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <color key="textColor" red="0.59399038459999998" green="0.59399038459999998" blue="0.59399038459999998" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -58,6 +58,7 @@
                     <constraint firstItem="DDL-7s-Mey" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="13" id="TMM-lb-daF"/>
                     <constraint firstAttribute="trailing" secondItem="q48-7R-bzc" secondAttribute="trailing" constant="10" id="YKz-YA-QzM"/>
                     <constraint firstItem="q48-7R-bzc" firstAttribute="top" secondItem="QVS-mr-Pfq" secondAttribute="bottom" constant="10" id="rTh-hG-wGj"/>
+                    <constraint firstItem="q48-7R-bzc" firstAttribute="bottom" secondItem="DDL-7s-Mey" secondAttribute="bottom" id="uGo-GF-07X"/>
                     <constraint firstItem="QVS-mr-Pfq" firstAttribute="leading" secondItem="DDL-7s-Mey" secondAttribute="trailing" constant="10" id="xMg-AO-mjp"/>
                 </constraints>
             </tableViewCellContentView>

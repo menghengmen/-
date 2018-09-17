@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface MHAcvicityModel : NSObject
 
 @property   (nonatomic,copy)   NSString * actiLogoUrl;
