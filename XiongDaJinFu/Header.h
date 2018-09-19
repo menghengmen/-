@@ -24,6 +24,9 @@
 
 //登录接口
 #define    URL_LOGIN            (  GlobalUrl     "/inter/interUserLogin.do")
+///登录接口
+#define    URL_REGISTER         (GlobalUrl  "/inter/interUserInfoRegByIos.do")
+
 //修改密码接口
 #define    URL_PASSWORDCHANGE            (  GlobalUrl     "/inter/interUserPWDEdit.do")
 //获取测试账号列表

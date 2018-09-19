@@ -10,6 +10,7 @@
 #import "registerViewController.h"
 #import "MainTabBarController.h"
 #import "UIViewController+HUD.h"
+
 @implementation LoginViewController
 {
 
@@ -157,9 +158,25 @@
         
     }];
     
+    //注册
+    UIButton  * registerBtn =   [XDCommonTool newButtonWithType:UIButtonTypeCustom normalImage:nil buttonTitle:@"去注册" target:self action:@selector(reister)];
+    [registerBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [backgroundView addSubview:registerBtn];
+    
+    [registerBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.right.equalTo(backgroundView.mas_right).offset(0);
+        make.centerY.equalTo(chooseBtn.mas_centerY);
+        make.height.equalTo(@44);
+        make.width.equalTo(@100);
+        
+    }];
     
     
-      UIButton *login = [UIButton buttonWithType:UIButtonTypeCustom];
+    
+    
+    
+    UIButton *login = [UIButton buttonWithType:UIButtonTypeCustom];
     [login setTitle:@"登 录" forState:UIControlStateNormal];
     [login setBackgroundColor:[UIColor colorWithHexString:@"#0383DA"]];
     login.layer.cornerRadius = 6;
@@ -198,6 +215,14 @@
     }
 
 }
+
+# pragma mark
+# pragma mark - 注册
+-(void)reister{
+    [self  presentViewController:[registerViewController new] animated:YES completion:nil];
+    
+}
+
 
 # pragma mark
 # pragma mark - 登录
