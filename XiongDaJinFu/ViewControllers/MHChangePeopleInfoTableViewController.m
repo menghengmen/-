@@ -41,7 +41,18 @@
 -(void)setUpUI{
     
     [self.view addSubview:self.table];
-    
+    UIButton *btn = [UIButton new];
+    btn.backgroundColor =[UIColor colorWithHexString:@"#0183dc"];
+    [btn setTitle:@"更新" forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(changeInfos) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn];
+    [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view.mas_centerX);
+        make.bottom.equalTo(self.view.mas_bottom).offset(-20);
+        make.left.equalTo(self.view.mas_left).offset(20);
+        make.height.equalTo(@(40));
+        
+    }];
 }
 
 
@@ -52,7 +63,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    return 2;
 }
 
 
@@ -81,14 +92,7 @@
             cell.text.tag = 100;
             break;
             
-        case 2:
-            cell.name.backgroundColor = [UIColor colorWithHexString:@"#0183dc"];
-            cell.name.text = @"更新";
-            cell.name.frame = CGRectMake(0, 0, SCREENWIDTH, cell.frame.size.height);
-            cell.name.userInteractionEnabled = YES;
-            [cell.name addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(changeInfos)]];
-            break;
-    
+
             
         default:
             break;
@@ -133,7 +137,6 @@
 
 }
 -(void)changeInfos{
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
 
     //昵称
     UITextField  * text =    [self.view viewWithTag:101];
@@ -142,7 +145,8 @@
         [self showHint:@"昵称没有更改"];
         return;
     }
-    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+
     NSDictionary  * dict = @{@"id":[[XDCommonTool readDicFromUserDefaultWithKey:USER_INFO].firstObject objectForKey:@"id"],@"uiNickname":text.text,@"uiBirthday":birthdayText.text,@"loginToken":[[XDCommonTool readDicFromUserDefaultWithKey:USER_INFO].firstObject objectForKey:@"loginToken"]};
     [[NetworkClient sharedClient] GET:URL_UPDATE_INFO dict:dict succeed:^(id data) {
         NSLog(@"%@",data);
